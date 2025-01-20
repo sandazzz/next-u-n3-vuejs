@@ -6,10 +6,11 @@ defineProps<{
   products: Product[];
 }>();
 </script>
+
 <template>
-  <div>
-    <h1>Liste des produits</h1>
-    <div class="product-list">
+  <div class="w-full min-h-screen flex flex-col justify-center">
+    <h1 class="text-2xl font-bold text-center mb-6">Liste des produits</h1>
+    <div class="flex gap-4 justify-center items-center">
       <TheProduct
         v-for="product in products"
         :key="product.id"
@@ -18,12 +19,3 @@ defineProps<{
     </div>
   </div>
 </template>
-
-<style scoped>
-.product-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
-}
-</style>
